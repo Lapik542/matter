@@ -5,130 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matter.js Draggable Test</title>
     <style>
-        .matter-section {
-            margin-top: 40px;
-            padding: 0 30px;
-            overflow: hidden;
-            position: relative;
-        }
+.matter-section {
+  margin-top: 40px;
+  padding: 0 30px;
+  overflow: hidden;
+  position: relative;
+}
 
-        .matter-container {
-            height: 440px;
-            position: relative;
-            overflow: hidden;
-        }
+.matter-container {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+}
 
-        .matter {
-            display: flex;
-            height: 440px;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-            border: 1px solid #000;
-            flex-direction: row;
-            position: relative;
-            overflow: hidden;
-        }
+.matter {
+  display: flex;
+  height: 440px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid #000;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+}
 
-        .background-1,
-        .background-2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 32px;
-            cursor: pointer;
-            z-index: 100;
-            border-radius: 50px;
-            border: 1px solid #000;
-            font-weight: 500;
-            width: 300px;
-            height: 70px;
-            flex-shrink: 0;
-            text-transform: uppercase;
-        }
+.background-1,
+.background-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 50px;
+  border: 1px solid #000;
+  font-weight: 500;
+  width: 300px;
+  height: 70px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
 
-        .background-1 {
-            background-color: #000;
-            color: #fbff36;
-        }
+.background-1 {
+  background-color: #000;
+  color: #fbff36;
+}
 
-        .background-2 {
-            background-color: transparent;
-            color: #000;
-        }
+.background-2 {
+  background-color: transparent;
+  color: #000;
+}
 
-        .draggable {
-            position: absolute !important;
-            user-select: none;
-            cursor: pointer;
-        }
+.draggable {
+  position: absolute !important;
+  user-select: none;
+  cursor: pointer;
+}
 
-        #matterCanvas {
-            width: 100% !important;
-            height: 100% !important;
-        }
 
-        canvas {
-            height: 440px;
-            display: none;
-        }
+#matterCanvas {
+  width: 100% !important;
+  height: 100% !important;
+}
 
-        @media screen and (min-width: 1512px) and (max-width: 1919px) {
-            .matter {
-                width: 100%;
-                height: 400px;
-                margin: 0 auto;
-            }
-        }
 
-        @media screen and (min-width: 834px) and (max-width: 1511px) {
-            .matter-section {
-                padding: 0;
-            }
-            .matter {
-                height: 400px;
-            }
-            .draggable {
-                width: 142px;
-                height: 42px;
-                flex-shrink: 0;
-                font-size: 18px;
-            }
-        }
+canvas {
+  height: 440px;
+  display: none;
+}
 
-        @media screen and (min-width: 320px) and (max-width: 833px) {
-            .matter-section {
-                padding: 0;
-            }
-            .draggable {
-                width: 112px;
-                height: 42px;
-                flex-shrink: 0;
-                font-size: 12px;
-            }
-        }
+@media screen and (min-width: 1512px) and (max-width: 1919px) {
+  .matter {
+      width: 100%;
+      height: 400px;
+      margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 834px) and (max-width: 1511px) {
+  .matter-section {
+    padding: 0;
+  }
+  .matter {
+    height: 400px;
+  }
+  .draggable {
+    width: 142px;
+    height: 42px;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 833px) {
+  .matter-section {
+    padding: 0;
+  }
+  .draggable {
+    width: 112px;
+    height: 42px;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+}
     </style>
 </head>
 <body>
     <section id="matter" class="matter-section">
         <div class="matter-container">
-            <div id="matterCanvasContainer" class="matter">
-                <canvas id="matterCanvas"></canvas>
-                <div class="background-1 draggable" id="body1">web design</div>
-                <div class="background-2 draggable" id="body2">creativity</div>
-                <div class="background-1 draggable" id="body3">experience</div>
-                <div class="background-2 draggable" id="body4">mobile app</div>
-                <div class="background-1 draggable" id="body5">smm</div>
-                <div class="background-2 draggable" id="body6">brands</div>
-                <div class="background-1 draggable" id="body7">front-end</div>
-                <div class="background-2 draggable" id="body8">animation</div>
-                <div class="background-1 draggable" id="body9">figma</div>
-            </div>
+          <div id="matterCanvasContainer" class="matter">
+            <canvas id="matterCanvas"></canvas>
+            <div class="background-1 draggable" id="body1">web design</div>
+            <div class="background-2 draggable" id="body2">creativity</div>
+            <div class="background-1 draggable" id="body3">experience</div>
+            <div class="background-2 draggable" id="body4">mobile app</div>
+            <div class="background-1 draggable" id="body5">smm</div>
+            <div class="background-2 draggable" id="body6">brands</div>
+            <div class="background-1 draggable" id="body7">front-end</div>
+            <div class="background-2 draggable" id="body8">animation</div>
+            <div class="background-1 draggable" id="body9">figma</div>
+          </div>
         </div>
-    </section>
+      </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
-    <script src="draggable.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
